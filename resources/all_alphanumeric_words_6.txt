@@ -476,6 +476,7 @@ advisy
 adviso
 advoke
 adward
+adware
 aeacus
 aeaean
 aecial
@@ -4701,6 +4702,7 @@ botfly
 bother
 bothie
 botkin
+botnet
 botone
 botong
 botony
@@ -4897,6 +4899,7 @@ brazil
 brazos
 breach
 breads
+bready
 breaks
 breams
 breana
@@ -5772,6 +5775,7 @@ cannot
 canoed
 canoes
 canoga
+canola
 canons
 canopy
 canova
@@ -5868,6 +5872,7 @@ cardew
 cardia
 cardie
 cardin
+cardio
 cardol
 cardon
 careen
@@ -10934,6 +10939,7 @@ elwell
 elwina
 elwira
 elwood
+emails
 emalee
 emalia
 emarie
@@ -13302,6 +13308,7 @@ gaging
 gagman
 gagmen
 gagnon
+gamers
 gayals
 gaycat
 gayest
