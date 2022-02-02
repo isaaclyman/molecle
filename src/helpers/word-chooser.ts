@@ -1,4 +1,4 @@
-import commonTxt from '../../resources/common_words_6.txt'
+import commonTxt from '../assets/common_words_6.txt'
 
 const arrayOfCommonWords = (commonTxt as string).split(/\r?\n/)
 const numberOfCommonWords = arrayOfCommonWords.length

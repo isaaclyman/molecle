@@ -1,12 +1,10 @@
 module.exports = {
-  configureWebpack: {
-    module: {
-      rules: [
-        {
-          test: '/.txt/i',
-          use: 'raw-loader',
-        },
-      ],
-    },
+  chainWebpack: (config) => {
+    config.module
+      .rule('raw')
+      .test(/\.txt$/i)
+      .use('raw-loader')
+      .loader('raw-loader')
+      .end()
   },
 }

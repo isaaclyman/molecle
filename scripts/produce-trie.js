@@ -17,8 +17,8 @@ const appendToTrie = (word) => {
 console.log('Reading file and producing trie...')
 
 let lineNumber = 0
-const filePath = __dirname + '/../resources/all_alphanumeric_words_6.txt'
-const outPath = __dirname + '/../resources/all_words_6_trie.json'
+const filePath = __dirname + '/../src/assets/all_alphanumeric_words_6.txt'
+const outPath = __dirname + '/../src/assets/all_words_6_trie.json'
 
 async function main() {
   await new Promise((resolve, reject) => {
