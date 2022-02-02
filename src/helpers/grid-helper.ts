@@ -72,14 +72,11 @@ export function addLetter(
       return GridEvent.InvalidWord
     }
 
+    setCellStates(gridState[lineNumber], todaysWord.toUpperCase())
     if (word.toUpperCase() === todaysWord.toUpperCase()) {
-      gridState[lineNumber].forEach(
-        (cell) => cell.state === CellState.RightPairRightPosition
-      )
       return GridEvent.Win
     }
 
-    setCellStates(gridState[lineNumber], todaysWord.toUpperCase())
     return GridEvent.Advance
   } else if (isEnter && !allCellsFilled) {
     return GridEvent.None
@@ -108,7 +105,11 @@ function setCellStates(line: Cell[], correctWord: string): void {
     const attemptCells = line.slice(pairNumber * 2, pairNumber * 2 + 2)
 
     const matchingCorrectPair = correctPairs.find(
-      (cp) => cp.includes(attemptPair[0]) && cp.includes(attemptPair[1])
+      (cp) =>
+        cp.includes(attemptPair[0]) &&
+        cp.includes(attemptPair[1]) &&
+        attemptPair.includes(cp[0]) &&
+        attemptPair.includes(cp[1])
     )
 
     if (
