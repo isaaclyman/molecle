@@ -6,7 +6,7 @@ const trie = JSON.parse(trieString)
 
 const commonPath = __dirname + '/../src/assets/common_words_6.txt'
 const commonString = fs.readFileSync(commonPath, 'utf8')
-const commonWords = commonString.split('\r\n')
+const commonWords = commonString.split(/\r?\n/)
 
 for (const word of commonWords) {
   let node = trie
