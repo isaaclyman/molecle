@@ -1,11 +1,13 @@
 <template>
   <div class="keyboard">
     <div class="row" v-for="(row, $rowIx) of keyRows" :key="$rowIx">
+      <div class="ghost-key" v-if="$rowIx === 1"></div>
       <div class="key" v-for="key of row" :key="key.letter">
         <button @click="pressKey(key.letter)" :class="'state-' + key.state">
           {{ key.letter }}
         </button>
       </div>
+      <div class="ghost-key" v-if="$rowIx === 1"></div>
     </div>
   </div>
 </template>
@@ -26,6 +28,10 @@ export default defineComponent({
   },
   methods: {
     pressKey(key: string) {
+      if (key === 'DEL') {
+        key = 'BACKSPACE'
+      }
+
       if (!validateKey(key)) {
         return
       }
@@ -49,6 +55,7 @@ export default defineComponent({
   flex-direction: column;
   justify-content: center;
   margin: 12px 0;
+  width: 100%;
 }
 
 .row {
@@ -57,6 +64,8 @@ export default defineComponent({
   flex-direction: row;
   justify-content: center;
   padding: 4px 0;
+  max-width: 400px;
+  width: 100%;
 }
 
 $button-size: 2.3rem;
@@ -65,14 +74,22 @@ $contrast-color: rgba(255, 255, 255, 0.75);
 $sorta-color: rgba(223, 212, 57, 0.5);
 $correct-color: rgba(39, 135, 65, 0.5);
 
+.ghost-key {
+  flex: 1;
+}
+
 .key {
+  flex: 1;
   margin: 0 2px;
 
   button {
+    flex: 1;
     font-size: 1.1rem;
     font-weight: 600;
     height: $button-size;
-    min-width: $button-size;
+    min-width: $button-size / 2;
+    padding: 0;
+    width: 100%;
 
     &.state-wrong {
       background-color: $wrong-color;
