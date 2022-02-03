@@ -1,5 +1,5 @@
 import { isLegitimateWord } from './word-helper'
-import { todaysWord } from './word-chooser'
+import { wordData } from './word-chooser'
 
 export enum CellState {
   None = 'none', // gray
@@ -72,8 +72,8 @@ export function addLetter(
       return GridEvent.InvalidWord
     }
 
-    setCellStates(gridState[lineNumber], todaysWord.toUpperCase())
-    if (word.toUpperCase() === todaysWord.toUpperCase()) {
+    setCellStates(gridState[lineNumber], wordData.todaysWord.toUpperCase())
+    if (word.toUpperCase() === wordData.todaysWord.toUpperCase()) {
       return GridEvent.Win
     }
 

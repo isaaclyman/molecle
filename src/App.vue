@@ -12,6 +12,10 @@
         <transition name="fade">
           <div v-if="!showHelp && !showSummary" class="body">
             <Grid :chances="chances" :gridData="gridData" ref="gridEl"></Grid>
+            <p v-if="hasFinished && !hasWon">
+              The word was <b>{{ todaysWord }}</b
+              >.
+            </p>
             <Keyboard :keyRows="keyRows" @letter="addLetter($event)"></Keyboard>
           </div>
         </transition>
@@ -22,7 +26,12 @@
         </transition>
         <transition name="fade">
           <div v-if="showSummary" class="summary-container">
-            <Summary @close="closeSummary" :hasWon="hasWon"></Summary>
+            <Summary
+              @close="closeSummary"
+              @reset="reset"
+              :hasWon="hasWon"
+              :gridData="gridData"
+            ></Summary>
           </div>
         </transition>
       </div>
@@ -32,8 +41,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { keyRows, syncGridStateToKeys } from './helpers/keyboard-helper'
+import {
+  generateEmptyKeyRows,
+  keyRows,
+  syncGridStateToKeys,
+} from './helpers/keyboard-helper'
 import { generateEmptyState, addLetter, GridEvent } from './helpers/grid-helper'
+import { wordData } from './helpers/word-chooser'
 import Grid from './components/grid.vue'
 import Keyboard from './components/keyboard.vue'
 import Help from './components/help.vue'
@@ -53,12 +67,13 @@ export default defineComponent({
     return {
       chances,
       currentLine: 0,
-      keyRows,
       gridData: generateEmptyState(chances),
       hasFinished: false,
       hasWon: false,
+      keyRows,
       showHelp: false,
       showSummary: false,
+      todaysWord: wordData.todaysWord,
     }
   },
   methods: {
@@ -96,6 +111,15 @@ export default defineComponent({
       }
     },
     closeSummary(): void {
+      this.showSummary = false
+    },
+    reset(): void {
+      this.currentLine = 0
+      this.gridData = generateEmptyState(chances)
+      this.hasFinished = false
+      this.hasWon = false
+      this.keyRows = generateEmptyKeyRows()
+      this.todaysWord = wordData.todaysWord
       this.showSummary = false
     },
     toggleHelp(): void {

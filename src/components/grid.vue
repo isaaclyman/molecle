@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { Cell, CellState } from '../helpers/grid-helper'
+import { Cell, CellState, GridState } from '../helpers/grid-helper'
 import Pair from './pair.vue'
 
 const cellNumberByPairCellIx: {
@@ -48,7 +48,7 @@ export default defineComponent({
   },
   methods: {
     getCellData(lineIx: number, pairIx: number, cellIx: number): Cell {
-      const row = this.gridData[lineIx - 1]
+      const row = (this.gridData as GridState)[lineIx - 1]
       if (!row) {
         return {
           letter: null,
@@ -93,7 +93,7 @@ export default defineComponent({
       default: 6,
     },
     gridData: {
-      type: Object,
+      type: Array,
       required: true,
     },
   },

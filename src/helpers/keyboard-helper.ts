@@ -16,19 +16,23 @@ export interface Key {
 
 const keyboardStrings = ['qwertyuiop', 'asdfghjkl', '<zxcvbnm*']
 
-export const keyRows: Key[][] = keyboardStrings.map((row) =>
-  row.split('').map(
-    (letter): Key => ({
-      letter:
-        letter === '*'
-          ? 'ENTER'
-          : letter === '<'
-          ? 'DEL'
-          : letter.toUpperCase(),
-      state: KeyState.None,
-    })
+export let keyRows: Key[][] = []
+export function generateEmptyKeyRows(): Key[][] {
+  return keyboardStrings.map((row) =>
+    row.split('').map(
+      (letter): Key => ({
+        letter:
+          letter === '*'
+            ? 'ENTER'
+            : letter === '<'
+            ? 'DEL'
+            : letter.toUpperCase(),
+        state: KeyState.None,
+      })
+    )
   )
-)
+}
+keyRows = generateEmptyKeyRows()
 
 export const validateKey = (key: string): boolean => {
   return /^[A-Z]$/.test(key) || key === 'ENTER' || key === 'BACKSPACE'
