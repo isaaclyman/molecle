@@ -1,6 +1,7 @@
 module.exports = {
   publicPath: '/sootly/',
   outputDir: 'docs',
+  productionSourceMap: false,
   chainWebpack: (config) => {
     config.module
       .rule('raw')
