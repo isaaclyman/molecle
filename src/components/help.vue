@@ -3,7 +3,8 @@
     <h2 class="title">Instructions</h2>
     <p>You have <b>7 tries</b> to guess a <b>6-letter word</b>.</p>
     <p>
-      The word is divided into <b>3 pairs</b>. You'll get clues about each pair.
+      The word is divided into <b>3 pairs</b>. You'll get clues about each pair
+      <b>independently</b>.
     </p>
     <hr />
     <div class="row">

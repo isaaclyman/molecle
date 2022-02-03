@@ -12,10 +12,15 @@
         <transition name="fade">
           <div v-if="!showHelp && !showSummary" class="body">
             <Grid :chances="chances" :gridData="gridData" ref="gridEl"></Grid>
-            <p v-if="hasFinished && !hasWon">
-              The word was <b>{{ todaysWord }}</b
-              >.
-            </p>
+            <div v-if="hasFinished">
+              <p v-if="!hasWon">
+                The word was <b>{{ todaysWord }}</b
+                >.
+              </p>
+              <div>
+                <button @click="toggleSummary">Results</button>
+              </div>
+            </div>
             <Keyboard :keyRows="keyRows" @letter="addLetter($event)"></Keyboard>
           </div>
         </transition>
@@ -27,7 +32,7 @@
         <transition name="fade">
           <div v-if="showSummary" class="summary-container">
             <Summary
-              @close="closeSummary"
+              @close="toggleSummary"
               @reset="reset"
               :hasWon="hasWon"
               :gridData="gridData"
@@ -98,7 +103,10 @@ export default defineComponent({
 
         if (this.currentLine >= chances) {
           this.hasFinished = true
-          this.showSummary = true
+
+          setTimeout(() => {
+            this.showSummary = true
+          }, 1500)
         }
         return
       }
@@ -106,12 +114,11 @@ export default defineComponent({
       if (result === GridEvent.Win) {
         this.hasWon = true
         this.hasFinished = true
-        this.showSummary = true
+        setTimeout(() => {
+          this.showSummary = true
+        }, 1500)
         return
       }
-    },
-    closeSummary(): void {
-      this.showSummary = false
     },
     reset(): void {
       this.currentLine = 0
@@ -123,7 +130,12 @@ export default defineComponent({
       this.showSummary = false
     },
     toggleHelp(): void {
+      this.showSummary = false
       this.showHelp = !this.showHelp
+    },
+    toggleSummary(): void {
+      this.showHelp = false
+      this.showSummary = !this.showSummary
     },
   },
 })

@@ -127,7 +127,10 @@ function setCellStates(line: Cell[], correctWord: string): void {
 
     const bothLettersCorrect =
       correctWord.includes(attemptPair[0]) &&
-      correctWord.includes(attemptPair[1])
+      correctWord.includes(attemptPair[1]) &&
+      (attemptPair[0] !== attemptPair[1] ||
+        correctWord.split('').filter((letter) => letter === attemptPair[0])
+          .length > 1)
     if (bothLettersCorrect) {
       attemptCells.forEach((cell) => (cell.state = CellState.TwoRightLetters))
       continue
