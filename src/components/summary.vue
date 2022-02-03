@@ -24,6 +24,10 @@
         ></Pair>
       </div>
     </div>
+    <div class="link">
+      <div>Permalink to this puzzle:</div>
+      <a :href="puzzleLink">{{ puzzleLink }}</a>
+    </div>
     <div class="actions">
       <button @click="playRandom">Play a random word</button>
       <button @click="close">Close</button>
@@ -60,6 +64,9 @@ export default defineComponent({
     },
     numberOfAttempts(): number {
       return this.modifiedGridState.length
+    },
+    puzzleLink(): string {
+      return `https://isaaclyman.com/sootly?puzzle=${this.puzzleNumber}`
     },
     title(): string {
       return this.hasWon ? 'You won!' : 'You lost.'
@@ -111,6 +118,10 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   margin-bottom: 6px;
+}
+
+.link {
+  margin-top: 18px;
 }
 
 .actions {

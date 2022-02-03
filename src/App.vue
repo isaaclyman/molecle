@@ -11,17 +11,21 @@
       <div class="constrained body-container">
         <transition name="fade">
           <div v-if="!showHelp && !showSummary" class="body">
+            <p>Puzzle #{{ puzzleNumber }}</p>
             <Grid :chances="chances" :gridData="gridData" ref="gridEl"></Grid>
             <div v-if="hasFinished">
               <p v-if="!hasWon">
                 The word was <b>{{ todaysWord }}</b
                 >.
               </p>
-              <div>
+              <p v-if="hasWon">You won!</p>
+              <div class="actions">
                 <button @click="toggleSummary">Results</button>
               </div>
             </div>
+            <div class="spacer"></div>
             <Keyboard :keyRows="keyRows" @letter="addLetter($event)"></Keyboard>
+            <div class="half-spacer"></div>
           </div>
         </transition>
         <transition name="fade">
@@ -76,6 +80,7 @@ export default defineComponent({
       hasFinished: false,
       hasWon: false,
       keyRows,
+      puzzleNumber: wordData.puzzleNumber,
       showHelp: false,
       showSummary: false,
       todaysWord: wordData.todaysWord,
@@ -126,6 +131,7 @@ export default defineComponent({
       this.hasFinished = false
       this.hasWon = false
       this.keyRows = generateEmptyKeyRows()
+      this.puzzleNumber = wordData.puzzleNumber
       this.todaysWord = wordData.todaysWord
       this.showSummary = false
     },
@@ -192,7 +198,19 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+
+.actions {
+  margin-top: 12px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.half-spacer {
+  flex: 0.5;
 }
 
 .help-container,
