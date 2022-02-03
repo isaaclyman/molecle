@@ -3,7 +3,10 @@
     <div class="row" v-for="(row, $rowIx) of keyRows" :key="$rowIx">
       <div class="ghost-key" v-if="$rowIx === 1"></div>
       <div class="key" v-for="key of row" :key="key.letter">
-        <button @click="pressKey(key.letter)" :class="'state-' + key.state">
+        <button
+          @click="pressKey(key.letter, $event)"
+          :class="'state-' + key.state"
+        >
           {{ key.letter }}
         </button>
       </div>
@@ -27,7 +30,11 @@ export default defineComponent({
     return {}
   },
   methods: {
-    pressKey(key: string) {
+    pressKey(key: string, event?: MouseEvent) {
+      if (event) {
+        event.stopPropagation()
+      }
+
       if (key === 'DEL') {
         key = 'BACKSPACE'
       }
@@ -89,6 +96,7 @@ $correct-color: rgba(39, 135, 65, 0.5);
     height: $button-size;
     min-width: calc($button-size / 2);
     padding: 0;
+    touch-action: manipulation;
     width: 100%;
 
     &.state-wrong {
