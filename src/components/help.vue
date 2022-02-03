@@ -60,6 +60,9 @@
         <b>However,</b> it might be backward (OS instead of SO).
       </div>
     </div>
+    <div class="copyright">
+      Sootly &copy; 2022 by <a href="https://isaaclyman.com">Isaac Lyman</a>.
+    </div>
     <div class="actions">
       <button class="close" @click="close">Close</button>
     </div>
@@ -132,5 +135,10 @@ p {
 .description {
   margin-left: 12px;
   text-align: left;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  margin: 12px 0;
 }
 </style>
