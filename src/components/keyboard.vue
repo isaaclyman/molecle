@@ -87,7 +87,7 @@ $correct-color: rgba(39, 135, 65, 0.5);
     font-size: 1.1rem;
     font-weight: 600;
     height: $button-size;
-    min-width: $button-size / 2;
+    min-width: calc($button-size / 2);
     padding: 0;
     width: 100%;
 
