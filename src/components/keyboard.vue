@@ -90,7 +90,7 @@ $correct-color: #447457;
   margin: 0 2px;
 
   button {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: #9d9eaa;
     color: $wrong-color;
     flex: 1;
     font-size: 1.1rem;
