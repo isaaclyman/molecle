@@ -90,7 +90,8 @@ $correct-color: #447457;
   margin: 0 2px;
 
   button {
-    color: $contrast-color;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: $wrong-color;
     flex: 1;
     font-size: 1.1rem;
     font-weight: 600;
@@ -99,6 +100,10 @@ $correct-color: #447457;
     padding: 0;
     touch-action: manipulation;
     width: 100%;
+
+    &:not(.state-none) {
+      color: $contrast-color;
+    }
 
     &.state-wrong {
       background-color: $wrong-color;
