@@ -87,11 +87,11 @@ burlap
 builds
 modern
 blamed
-carney
+shaped
 biogas
 struck
 babble
-capons
+regime
 cheese
 lively
 palace
@@ -122,7 +122,7 @@ bikini
 medium
 knives
 cereus
-bloods
+belief
 busker
 really
 pixels
@@ -135,7 +135,7 @@ beaded
 calved
 simple
 desire
-bhakti
+voyage
 billow
 banger
 barfed
@@ -223,7 +223,7 @@ missed
 visits
 proper
 rating
-aeries
+emails
 deputy
 sorted
 regret
@@ -251,7 +251,7 @@ hoping
 change
 superb
 bobbin
-chicle
+borrow
 accord
 chiefs
 wisdom
@@ -266,7 +266,7 @@ spells
 brazed
 barker
 speaks
-caries
+soccer
 stairs
 ritual
 serves
@@ -313,8 +313,8 @@ choose
 within
 abrupt
 saying
-burton
-carder
+axioms
+assure
 origin
 secret
 cotton
@@ -337,7 +337,7 @@ sealed
 cinema
 storms
 tender
-aorist
+belles
 moment
 caveat
 adults
@@ -373,7 +373,7 @@ myriad
 values
 bemoan
 aprons
-capita
+assent
 bopped
 bikers
 header
@@ -409,8 +409,8 @@ blonds
 canned
 bribed
 fluffy
-chinch
-amines
+baboon
+divine
 carers
 botany
 source
@@ -434,7 +434,7 @@ cedars
 insane
 enzyme
 broils
-chador
+cairns
 graves
 slides
 trusts
@@ -479,7 +479,7 @@ blurbs
 floral
 bantam
 brawns
-brevet
+button
 secure
 driven
 stocks
@@ -534,7 +534,7 @@ borers
 glossy
 cervix
 booing
-caecum
+truths
 impact
 adapts
 valves
@@ -603,7 +603,7 @@ birder
 relate
 screws
 golden
-assize
+carrot
 repeat
 scroll
 estate
@@ -688,7 +688,7 @@ refuse
 caller
 online
 bistro
-arnica
+adores
 armies
 blimey
 beside
@@ -714,7 +714,7 @@ tattoo
 bucked
 closed
 chancy
-biotas
+either
 adverb
 abbots
 humans
@@ -740,7 +740,7 @@ boners
 ghosts
 alumni
 grapes
-ataxia
+filmed
 little
 capped
 besets
@@ -761,7 +761,7 @@ amazes
 entire
 badman
 issues
-barbel
+beyond
 topped
 alumna
 lesson
@@ -779,7 +779,6 @@ honour
 banzai
 ampere
 bangle
-anomie
 violin
 arouse
 berets
@@ -805,7 +804,6 @@ remind
 doubts
 people
 housed
-basely
 timing
 breaks
 viewed
@@ -824,9 +822,7 @@ brains
 weekly
 styles
 boxing
-cantor
 anvils
-barite
 trains
 arsons
 adjust
@@ -850,7 +846,6 @@ ballsy
 asthma
 absurd
 damage
-bunkum
 fierce
 poetry
 buoyed
@@ -870,7 +865,6 @@ proved
 barred
 states
 heroes
-cerium
 houses
 dental
 cracks
@@ -898,7 +892,6 @@ sooner
 sketch
 breast
 edible
-boobie
 burley
 strive
 detail
@@ -907,17 +900,13 @@ anoxic
 nickel
 circle
 regain
-bateau
 jungle
 marked
-chilli
 bisque
 accrue
-bestir
 faults
 birdie
 cooker
-carina
 rushed
 dosage
 grants
@@ -931,7 +920,6 @@ quartz
 brings
 trendy
 tumors
-cassia
 badder
 caroms
 folded
@@ -950,23 +938,19 @@ feared
 bovine
 chimed
 layers
-barque
 biggie
 slower
 defect
 whales
 fellow
-budgie
 apathy
 themes
 whites
-bronzy
 stayed
 notice
 please
 evenly
 caviar
-bardic
 abides
 acting
 planes
@@ -980,6 +964,7 @@ launch
 pencil
 abates
 adorns
+sootly
 camels
 biceps
 lastly
@@ -1083,7 +1068,6 @@ laptop
 picked
 better
 career
-billet
 seller
 aspect
 shadow
@@ -1162,13 +1146,11 @@ thinks
 badass
 dealer
 boohoo
-ahimsa
 browns
 slight
 allude
 opened
 bagger
-bourse
 seemed
 arable
 coding
@@ -1294,7 +1276,6 @@ terror
 chalky
 attach
 hugely
-chasse
 cheery
 zoning
 barrow
@@ -1323,7 +1304,6 @@ plaque
 herbal
 plains
 misery
-atlatl
 simmer
 carped
 silver
@@ -1385,7 +1365,6 @@ alleys
 humour
 verbal
 cachet
-boucle
 sphere
 member
 caucus
@@ -1404,7 +1383,6 @@ cartel
 finest
 anodic
 double
-cassis
 cabana
 partly
 candor
@@ -1426,10 +1404,8 @@ baited
 bonito
 arrest
 street
-borate
 yellow
 anthem
-axonal
 desert
 apices
 torque
@@ -1454,7 +1430,6 @@ beggar
 poured
 bodied
 refund
-blinis
 stores
 ballet
 byline
@@ -1467,13 +1442,11 @@ liquid
 eighth
 majors
 rotary
-aliyah
 result
 panels
 losses
 affect
 models
-albite
 hidden
 basque
 bosses
@@ -1485,7 +1458,6 @@ triple
 walnut
 captor
 senior
-alkyds
 caddie
 optics
 bottle
@@ -1530,7 +1502,6 @@ joined
 retire
 boozer
 danish
-apnoea
 baller
 analog
 blanks
@@ -1755,7 +1726,6 @@ caused
 option
 begets
 foster
-amnion
 tastes
 candid
 cheeks
@@ -1794,9 +1764,7 @@ casein
 busses
 refers
 bidden
-adduce
 edited
-aureus
 barren
 learnt
 rebels
@@ -1807,7 +1775,6 @@ scales
 should
 switch
 marine
-caiman
 trials
 kindly
 adagio
@@ -1821,8 +1788,6 @@ alerts
 blithe
 altars
 anions
-agouti
-affine
 potato
 retail
 filing
@@ -1847,7 +1812,6 @@ copper
 flavor
 rotate
 pickup
-baryon
 adored
 lifted
 healed
@@ -1963,7 +1927,6 @@ merger
 rounds
 attack
 bested
-anther
 beamed
 bidets
 twelve
@@ -1982,7 +1945,7 @@ chafes
 carpet
 amulet
 bagmen
-arrant
+errant
 batman
 glance
 blouse
@@ -1993,7 +1956,7 @@ caving
 vessel
 bummed
 antler
-affray
+defray
 brazen
 paying
 troops
@@ -2013,7 +1976,6 @@ versus
 liable
 wildly
 credit
-bathos
 pledge
 bowers
 staple
@@ -2066,7 +2028,6 @@ mobile
 strike
 plants
 colour
-axilla
 astray
 museum
 saving
@@ -2086,13 +2047,11 @@ answer
 beaker
 babies
 bottom
-canton
 armour
 abodes
 carpal
 packet
 cabbie
-billon
 effort
 albino
 apneic
@@ -2129,7 +2088,6 @@ beasts
 blazes
 polite
 packed
-batiks
 alight
 drives
 streak
@@ -2165,7 +2123,6 @@ mainly
 caning
 habits
 fabric
-campos
 befits
 barrel
 latter
@@ -2266,7 +2223,6 @@ diesel
 bleeps
 sheets
 chesty
-arroyo
 doctor
 brayed
 cherub
@@ -2286,8 +2242,6 @@ booths
 unsafe
 notify
 baring
-cerise
-blenny
 belted
 shares
 stated
@@ -2309,9 +2263,7 @@ lounge
 balked
 novice
 excess
-cannas
 denied
-caudal
 chaser
 cherry
 copied
@@ -2338,7 +2290,6 @@ almost
 insure
 obtain
 banner
-baleen
 bunked
 fluids
 barter
@@ -2378,10 +2329,8 @@ parade
 attest
 county
 casing
-buccal
 heaven
 skills
-auxins
 slider
 placed
 splash
@@ -2406,15 +2355,12 @@ levels
 flawed
 genres
 cabled
-burnet
 ampule
 eating
 dozens
 ending
 linear
 armful
-cation
-capsid
 valued
 brooms
 bodkin
@@ -2452,24 +2398,3 @@ pantry
 bagged
 cameos
 strict
-beyond
-filmed
-either
-adores
-carrot
-truths
-button
-cairns
-divine
-baboon
-assent
-belles
-assure
-axioms
-soccer
-borrow
-emails
-voyage
-belief
-regime
-shaped
