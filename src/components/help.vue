@@ -6,7 +6,6 @@
       The word is divided into <b>3 pairs</b>. You'll get clues about each pair
       <b>independently</b>.
     </p>
-    <hr />
     <div class="row">
       <Pair
         :isInvalid="false"

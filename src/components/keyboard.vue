@@ -76,10 +76,10 @@ export default defineComponent({
 }
 
 $button-size: 2.3rem;
-$wrong-color: rgba(62, 62, 62, 0.75);
-$contrast-color: rgba(255, 255, 255, 0.75);
-$sorta-color: rgba(223, 212, 57, 0.5);
-$correct-color: rgba(39, 135, 65, 0.5);
+$contrast-color: #d8e7e9;
+$wrong-color: #29252d;
+$sorta-color: #b89651;
+$correct-color: #447457;
 
 .ghost-key {
   flex: 1;
@@ -90,6 +90,7 @@ $correct-color: rgba(39, 135, 65, 0.5);
   margin: 0 2px;
 
   button {
+    color: $contrast-color;
     flex: 1;
     font-size: 1.1rem;
     font-weight: 600;
@@ -101,7 +102,6 @@ $correct-color: rgba(39, 135, 65, 0.5);
 
     &.state-wrong {
       background-color: $wrong-color;
-      color: $contrast-color;
     }
 
     &.state-maybe {

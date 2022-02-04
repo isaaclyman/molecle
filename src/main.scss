@@ -1,6 +1,10 @@
+$bg: #acb0c3;
+$dark: #29252D;
+$dark-secondary: #5e585f;
+
 html, body {
-  background-color: #c8c8c8;
-  color: #000;
+  background-color: $bg;
+  color: $dark;
   margin: 0;
   padding: 0;
 }
@@ -10,19 +14,22 @@ html, body {
 }
 
 button {
-  background-color: rgba(0,0,0,0.25);
+  background-color: $dark;
   border: none;
   border-radius: 6px;
-  color: black;
+  color: $bg;
   cursor: pointer;
   padding: 4px 9px;
 }
 
 hr {
-  background-color: rgba(0,0,0,0.08);
-  border: none;
-  height: 1px;
-  margin: 1px auto;
+  background-color: $dark-secondary;
+  border-bottom: none;
+  border-left: 2px solid $dark-secondary;
+  border-right: 2px solid $dark-secondary;
+  border-top: none;
+  height: 2px;
+  margin: 0;
   max-width: calc(100% - 12px);
   padding: 0;
   width: 600px;
@@ -40,8 +47,6 @@ hr {
 }
 
 .constrained {
-  border-left: 1px solid rgba(0,0,0,0.08);
-  border-right: 1px solid rgba(0,0,0,0.08);
   margin: 0 auto;
   max-width: calc(100% - 12px);
   width: 600px;

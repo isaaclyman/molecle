@@ -38,15 +38,16 @@ export default defineComponent({
 <style lang="scss" scoped>
 $cell-vpadding: 0.2rem;
 $cell-width: 2rem;
-$wrong-color: #9e9e9e;
-$sorta-color: rgba(255, 238, 0, 0.5);
-$correct-color: rgba(39, 135, 65, 0.5);
+$contrast-color: #d8e7e9;
+$wrong-color: #29252d;
+$sorta-color: #b89651;
+$correct-color: #447457;
 
 .pair {
   align-items: center;
   border: 2px solid #5e5e5e;
   border-radius: 12px;
-  color: black;
+  color: #29252d;
   display: flex;
   flex-direction: row;
   height: $cell-width;
@@ -60,6 +61,10 @@ $correct-color: rgba(39, 135, 65, 0.5);
     animation-duration: 150ms;
     animation-iteration-count: 6;
     animation-timing-function: ease-out;
+  }
+
+  &:not(.state-none) {
+    color: $contrast-color;
   }
 
   &.state-wrong {
