@@ -20,6 +20,7 @@ button {
   color: $bg;
   cursor: pointer;
   padding: 4px 9px;
+  user-select: none;
 }
 
 hr {
