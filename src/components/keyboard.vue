@@ -91,6 +91,7 @@ $correct-color: #447457;
 
   button {
     background-color: #9d9eaa;
+    border: 2px solid transparent;
     color: $wrong-color;
     flex: 1;
     font-size: 1.1rem;
@@ -99,6 +100,7 @@ $correct-color: #447457;
     min-width: calc($button-size / 2);
     padding: 0;
     touch-action: manipulation;
+    transition: background-color 200ms, color 200ms, border 200ms;
     width: 100%;
 
     &:not(.state-none) {
@@ -111,14 +113,22 @@ $correct-color: #447457;
 
     &.state-maybe {
       background: linear-gradient(180deg, $sorta-color 50%, $wrong-color 50%);
+      background-origin: border-box;
+      background-repeat: no-repeat;
+      border-color: $wrong-color;
+      border-style: dashed;
     }
 
     &.state-right-letter {
       background-color: $sorta-color;
+      border-color: $wrong-color;
+      border-style: dashed;
     }
 
     &.state-right-pair {
       background: linear-gradient(180deg, $correct-color 50%, $wrong-color 50%);
+      background-origin: border-box;
+      background-repeat: no-repeat;
     }
 
     &.state-right-pair-right-position {
