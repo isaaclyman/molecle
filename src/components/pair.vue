@@ -54,7 +54,7 @@ $correct-color: #447457;
   justify-content: center;
   margin: 0 6px;
   padding: $cell-vpadding 0;
-  transition: background-color 200ms, border 200ms;
+  transition: background-color 200ms, color 200ms, border 200ms;
 
   &.invalid {
     animation-name: invalid;
