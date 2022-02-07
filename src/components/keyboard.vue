@@ -6,6 +6,7 @@
         <button
           @click="pressKey(key.letter, $event)"
           :class="'state-' + key.state"
+          :aria-description="getAriaDescription(key)"
         >
           {{ key.letter }}
         </button>
@@ -17,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { validateKey } from '../helpers/keyboard-helper'
+import { Key, KeyState, validateKey } from '../helpers/keyboard-helper'
 
 export default defineComponent({
   created() {
@@ -30,6 +31,24 @@ export default defineComponent({
     return {}
   },
   methods: {
+    getAriaDescription(key: Key): string {
+      switch (key.state) {
+        case KeyState.None:
+          return 'Not submitted'
+        case KeyState.Wrong:
+          return 'Wrong letter'
+        case KeyState.MaybeLetter:
+          return 'Maybe letter'
+        case KeyState.RightLetter:
+          return 'Right letter'
+        case KeyState.RightPair:
+          return 'Right pair'
+        case KeyState.RightPairRightPosition:
+          return 'Right pair right position'
+      }
+
+      return 'Unknown state'
+    },
     pressKey(key: string, event?: MouseEvent) {
       if (event) {
         event.stopPropagation()

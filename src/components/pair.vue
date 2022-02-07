@@ -1,5 +1,9 @@
 <template>
-  <div class="pair" :class="[isInvalid ? 'invalid' : '', 'state-' + state]">
+  <div
+    class="pair"
+    :class="[isInvalid ? 'invalid' : '', 'state-' + state]"
+    :aria-description="ariaDescription"
+  >
     <div
       class="cell"
       :class="'state-' + cellData[$cellIx - 1].state"
@@ -12,9 +16,31 @@
 </template>
 
 <script lang="ts">
+import { Cell, CellState } from '@/helpers/grid-helper'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
+  computed: {
+    ariaDescription(): string {
+      const cell = this.cellData[0] as Cell
+      switch (cell.state) {
+        case CellState.None:
+          return 'Not submitted'
+        case CellState.Wrong:
+          return 'Bad pair'
+        case CellState.OneRightLetter:
+          return 'Half pair'
+        case CellState.TwoRightLetters:
+          return 'Double half pair'
+        case CellState.RightPair:
+          return 'Full pair'
+        case CellState.RightPairRightPosition:
+          return 'Perfect pair'
+      }
+
+      return 'Unknown state'
+    },
+  },
   data() {
     return {}
   },
