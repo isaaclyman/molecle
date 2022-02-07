@@ -54,6 +54,7 @@ $correct-color: #447457;
   justify-content: center;
   margin: 0 6px;
   padding: $cell-vpadding 0;
+  transition: background-color 200ms, border 200ms;
 
   &.invalid {
     animation-name: invalid;
@@ -73,18 +74,26 @@ $correct-color: #447457;
 
   &.state-one-right-letter {
     background: linear-gradient(180deg, $sorta-color 50%, $wrong-color 50%);
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    border-color: $wrong-color;
+    border-style: dashed;
   }
 
   &.state-two-right-letters {
     background-color: $sorta-color;
+    border-color: $wrong-color;
+    border-style: dashed;
   }
 
   &.state-right-pair {
     background: linear-gradient(180deg, $correct-color 50%, $wrong-color 50%);
+    border-color: $wrong-color;
   }
 
   &.state-right-pair-right-position {
     background-color: $correct-color;
+    border-color: $wrong-color;
   }
 }
 
