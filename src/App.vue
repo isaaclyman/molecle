@@ -55,8 +55,14 @@ import {
   keyRows,
   syncGridStateToKeys,
 } from './helpers/keyboard-helper'
-import { generateEmptyState, addLetter, GridEvent } from './helpers/grid-helper'
+import {
+  generateEmptyState,
+  addLetter,
+  GridEvent,
+  CellState,
+} from './helpers/grid-helper'
 import { wordData } from './helpers/word-chooser'
+import { RememberHelper } from './helpers/remember-helper'
 import Grid from './components/grid.vue'
 import Keyboard from './components/keyboard.vue'
 import Help from './components/help.vue'
@@ -71,6 +77,26 @@ export default defineComponent({
     Keyboard,
     Help,
     Summary,
+  },
+  created() {
+    const rememberedPuzzle = RememberHelper.getPuzzle(this.puzzleNumber)
+
+    if (rememberedPuzzle) {
+      this.gridData = rememberedPuzzle.gridData
+      const firstLineWithEmptyCell = this.gridData.findIndex((row) =>
+        row.some((cell) => cell.state === CellState.None)
+      )
+      const lastLineWithNonEmptyCell =
+        firstLineWithEmptyCell === 0
+          ? 0
+          : firstLineWithEmptyCell === -1
+          ? this.gridData.length - 1
+          : firstLineWithEmptyCell - 1
+      this.currentLine = lastLineWithNonEmptyCell
+      syncGridStateToKeys(this.gridData, this.keyRows)
+
+      this.addLetter('ENTER', true)
+    }
   },
   data() {
     return {
@@ -87,7 +113,7 @@ export default defineComponent({
     }
   },
   methods: {
-    addLetter(letter: string): void {
+    addLetter(letter: string, suppressError = false): void {
       if (this.hasFinished) {
         if (!this.showHelp) {
           this.showSummary = true
@@ -98,10 +124,13 @@ export default defineComponent({
       const result = addLetter(this.gridData, this.currentLine, letter)
 
       if (result === GridEvent.InvalidWord) {
-        ;(this.$refs.gridEl as typeof Grid).invalidWord(this.currentLine)
+        if (!suppressError) {
+          ;(this.$refs.gridEl as typeof Grid).invalidWord(this.currentLine)
+        }
         return
       }
 
+      RememberHelper.savePuzzle(this.puzzleNumber, this.gridData)
       syncGridStateToKeys(this.gridData, this.keyRows)
       if (result === GridEvent.Advance) {
         this.currentLine++
