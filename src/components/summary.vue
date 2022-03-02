@@ -38,7 +38,7 @@
 <script lang="ts">
 import { GridState } from '@/helpers/grid-helper'
 import { defineComponent } from 'vue'
-import { setWord, wordData } from '../helpers/word-chooser'
+import { getPuzzleLink, setWord, wordData } from '../helpers/word-chooser'
 import Pair from './pair.vue'
 
 export default defineComponent({
@@ -66,7 +66,7 @@ export default defineComponent({
       return this.modifiedGridState.length
     },
     puzzleLink(): string {
-      return `https://isaaclyman.com/sootly?puzzle=${this.puzzleNumber}`
+      return getPuzzleLink(this.puzzleNumber)
     },
     title(): string {
       return this.hasWon ? 'You won!' : 'You lost.'

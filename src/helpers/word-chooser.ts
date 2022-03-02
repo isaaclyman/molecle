@@ -41,3 +41,6 @@ export function setWord(chooseRandom = false): void {
 
 setWord()
 export const wordData = data
+export const getPuzzleLink = function (puzzleNumber: number): string {
+  return `https://isaaclyman.com/sootly?puzzle=${puzzleNumber}`
+}

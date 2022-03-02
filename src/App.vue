@@ -11,7 +11,11 @@
       <div class="constrained body-container">
         <transition name="fade">
           <div v-if="!showHelp && !showSummary" class="body">
-            <p>Puzzle #{{ puzzleNumber }}</p>
+            <p>
+              Puzzle #{{ puzzleNumber }}
+              <br />
+              <a class="permalink" :href="puzzleLink">permalink</a>
+            </p>
             <Grid :chances="chances" :gridData="gridData" ref="gridEl"></Grid>
             <div v-if="hasFinished">
               <p v-if="!hasWon">
@@ -61,7 +65,7 @@ import {
   GridEvent,
   CellState,
 } from './helpers/grid-helper'
-import { wordData } from './helpers/word-chooser'
+import { getPuzzleLink, wordData } from './helpers/word-chooser'
 import { RememberHelper } from './helpers/remember-helper'
 import Grid from './components/grid.vue'
 import Keyboard from './components/keyboard.vue'
@@ -77,6 +81,11 @@ export default defineComponent({
     Keyboard,
     Help,
     Summary,
+  },
+  computed: {
+    puzzleLink(): string {
+      return getPuzzleLink(this.puzzleNumber)
+    },
   },
   created() {
     const rememberedPuzzle = RememberHelper.getPuzzle(this.puzzleNumber)
@@ -205,7 +214,7 @@ export default defineComponent({
 
 .jumbo {
   font-size: 5rem;
-  margin: 12px 0;
+  margin: 8px 0;
 }
 
 .help-toggle {
@@ -249,6 +258,11 @@ export default defineComponent({
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.permalink {
+  font-size: 0.8rem;
+  margin-top: 4px;
 }
 
 // TRANSITIONS
