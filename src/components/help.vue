@@ -3,8 +3,8 @@
     <h2 class="title">Instructions</h2>
     <p>You have <b>7 tries</b> to guess a <b>6-letter word</b>.</p>
     <p>
-      The word is divided into <b>3 pairs</b>. You'll get clues about each pair
-      <b>independently</b>.
+      The word is divided into <b>3 pairs</b>. When you submit a word, 
+      you'll get clues about each pair <b>independently</b>.
     </p>
     <div class="row">
       <Pair
@@ -56,7 +56,17 @@
       ></Pair>
       <div class="description">
         This is a <b>perfect pair.</b> It's a full pair in the correct position.
-        <b>However,</b> it might be backward (OS instead of SO).
+      </div>
+    </div>
+    <div class="row">
+      <Pair
+        :isInvalid="false"
+        :state="CellState.RightPairRightPosition"
+        :cellData="pairPerfectReverse"
+      ></Pair>
+      <div class="description">
+        <b>Full pairs</b> and <b>perfect pairs</b> may be backwards! In these examples,
+        the correct word was SOOTLY.
       </div>
     </div>
     <div class="copyright">
@@ -93,13 +103,17 @@ export default defineComponent({
         { letter: 'Y', state: CellState.TwoRightLetters },
       ],
       pairGood: [
-        { letter: 'L', state: CellState.RightPair },
         { letter: 'Y', state: CellState.RightPair },
+        { letter: 'L', state: CellState.RightPair },
       ],
       pairPerfect: [
-        { letter: 'S', state: CellState.RightPairRightPosition },
         { letter: 'O', state: CellState.RightPairRightPosition },
+        { letter: 'S', state: CellState.RightPairRightPosition },
       ],
+      pairPerfectReverse: [
+        { letter: 'S', state: CellState.RightPairRightPosition },
+        { letter: 'O', state: CellState.RightPairRightPosition }
+      ]
     }
   },
   methods: {

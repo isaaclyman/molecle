@@ -6,7 +6,6 @@
         <button class="help-toggle" @click="toggleHelp">?</button>
       </div>
     </div>
-    <hr />
     <div class="container body-container">
       <div class="constrained body-container">
         <transition name="fade">
