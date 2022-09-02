@@ -104,7 +104,7 @@ function setCellStates(line: Cell[], correctWord: string): void {
       .split('')
     const attemptCells = line.slice(pairNumber * 2, pairNumber * 2 + 2)
 
-    const matchingCorrectPair = correctPairs.find(
+    const matchingCorrectPairs = correctPairs.filter(
       (cp) =>
         cp.includes(attemptPair[0]) &&
         cp.includes(attemptPair[1]) &&
@@ -113,14 +113,16 @@ function setCellStates(line: Cell[], correctWord: string): void {
     )
 
     if (
-      matchingCorrectPair &&
-      correctPairs.indexOf(matchingCorrectPair) === pairNumber
+      matchingCorrectPairs.length &&
+      matchingCorrectPairs.some(
+        (mcp) => correctPairs.indexOf(mcp) === pairNumber
+      )
     ) {
       attemptCells.forEach(
         (cell) => (cell.state = CellState.RightPairRightPosition)
       )
       continue
-    } else if (matchingCorrectPair) {
+    } else if (matchingCorrectPairs.length) {
       attemptCells.forEach((cell) => (cell.state = CellState.RightPair))
       continue
     }
