@@ -59,12 +59,7 @@
         ></Pair>
       </div>
     </div>
-    <div class="link">
-      <div>Permalink to this puzzle:</div>
-      <a :href="puzzleLink">{{ puzzleLink }}</a>
-    </div>
     <div class="actions">
-      <button @click="playRandom">Play a random word</button>
       <button @click="close">Close</button>
     </div>
   </div>
@@ -73,7 +68,7 @@
 <script lang="ts">
 import { GridState } from '@/helpers/grid-helper'
 import { defineComponent } from 'vue'
-import { getPuzzleLink, setWord, wordData } from '../helpers/word-chooser'
+import { getPuzzleLink, wordData } from '../helpers/word-chooser'
 import Pair from './pair.vue'
 import { Achievement, getAchievements } from '@/helpers/achievement-helper'
 
@@ -122,10 +117,6 @@ export default defineComponent({
     },
     hideAchievementOverlay() {
       this.achievementOverlayIsShown = false
-    },
-    playRandom() {
-      setWord(true)
-      this.$emit('reset')
     },
     showAchievementOverlay(achievement: Achievement) {
       this.selectedAchievement = achievement

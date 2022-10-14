@@ -13,7 +13,6 @@
             <p>
               Puzzle #{{ puzzleNumber }}
               <br />
-              <a class="permalink" :href="puzzleLink">permalink</a>
             </p>
             <Grid :chances="chances" :gridData="gridData" ref="gridEl"></Grid>
             <div v-if="hasFinished">

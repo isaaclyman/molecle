@@ -1,74 +1,16 @@
 <template>
   <div class="help">
-    <h2 class="title">Instructions</h2>
-    <p>You have <b>7 tries</b> to guess a <b>6-letter word</b>.</p>
+    <h2 class="title">Stop!</h2>
+    <p>Sootly is now available as a <b>mobile app</b>.</p>
     <p>
-      The word is divided into <b>3 pairs</b>. When you submit a word, 
-      you'll get clues about each pair <b>independently</b>.
+      The app is <b>redesigned from the ground up</b> with awesome features like
+      a <b>custom puzzle maker</b>, 16 earnable <b>achievements</b>, and a Stats
+      page to <b>track your performance</b> over time.
     </p>
-    <div class="row">
-      <Pair
-        :isInvalid="false"
-        :state="CellState.Wrong"
-        :cellData="pairBad"
-      ></Pair>
-      <div class="description">
-        This is a <b>bad pair.</b> Neither letter is in the word.
-      </div>
-    </div>
-    <div class="row">
-      <Pair
-        :isInvalid="false"
-        :state="CellState.OneRightLetter"
-        :cellData="pairOneLetter"
-      ></Pair>
-      <div class="description">
-        This is a <b>half pair.</b> One of these letters is in the word.
-      </div>
-    </div>
-    <div class="row">
-      <Pair
-        :isInvalid="false"
-        :state="CellState.TwoRightLetters"
-        :cellData="pairTwoLetters"
-      ></Pair>
-      <div class="description">
-        This is a <b>double half pair.</b> Both of these letters are in the
-        word, but they're not in the same pair.
-      </div>
-    </div>
-    <div class="row">
-      <Pair
-        :isInvalid="false"
-        :state="CellState.RightPair"
-        :cellData="pairGood"
-      ></Pair>
-      <div class="description">
-        This is a <b>full pair.</b> Both of these letters are in the word and in
-        the same pair, but not in this position.
-      </div>
-    </div>
-    <div class="row">
-      <Pair
-        :isInvalid="false"
-        :state="CellState.RightPairRightPosition"
-        :cellData="pairPerfect"
-      ></Pair>
-      <div class="description">
-        This is a <b>perfect pair.</b> It's a full pair in the correct position.
-      </div>
-    </div>
-    <div class="row">
-      <Pair
-        :isInvalid="false"
-        :state="CellState.RightPairRightPosition"
-        :cellData="pairPerfectReverse"
-      ></Pair>
-      <div class="description">
-        <b>Full pairs</b> and <b>perfect pairs</b> may be backwards! In these examples,
-        the correct word was SOOTLY.
-      </div>
-    </div>
+    <p>
+      You can download it for iOS or Android at
+      <a href="https://sootly.isaaclyman.com">sootly.isaaclyman.com.</a>
+    </p>
     <div class="copyright">
       Sootly &copy; 2022 by <a href="https://isaaclyman.com">Isaac Lyman</a>.
     </div>
@@ -81,12 +23,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { CellState } from '../helpers/grid-helper'
-import Pair from './pair.vue'
 
 export default defineComponent({
-  components: {
-    Pair,
-  },
+  components: {},
   data() {
     return {
       CellState,
@@ -112,8 +51,8 @@ export default defineComponent({
       ],
       pairPerfectReverse: [
         { letter: 'S', state: CellState.RightPairRightPosition },
-        { letter: 'O', state: CellState.RightPairRightPosition }
-      ]
+        { letter: 'O', state: CellState.RightPairRightPosition },
+      ],
     }
   },
   methods: {
